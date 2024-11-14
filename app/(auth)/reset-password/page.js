@@ -62,7 +62,7 @@ function Page() {
 
               </form>
 
-              <Link href='/home' className='bg-[var(--button)] py-4 rounded-md text-center'>Confirm</Link>
+              <Link href='/home' className='bg-[var(--button)] py-4 rounded-md text-center text-white'>Confirm</Link>
 
         </div>
 

@@ -41,7 +41,7 @@ function Page() {
           maxLength={6}
         />
 
-        <Link href='/login' className='bg-[var(--button)] py-4 rounded-md text-center mb-8'>
+        <Link href='/login' className='bg-[var(--button)] py-4 rounded-md text-center mb-8 text-white'>
           Continue
         </Link>
 

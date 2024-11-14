@@ -48,7 +48,7 @@ function Page() {
 
               </form>
 
-              <Link href='/home' className='bg-[var(--button)] py-4 rounded-md text-center mb-10'>Log in</Link>
+              <Link href='/home' className='bg-[var(--button)] py-4 rounded-md text-center mb-10 text-white'>Log in</Link>
 
               <p className='text-center text-[var(--paragraph)]'>
                 Already have an account?{' '}

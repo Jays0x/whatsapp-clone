@@ -11,7 +11,7 @@ const userData = [
         chat: [
             {
                 id: 1,
-                message: 'Hello John!',
+                message: 'Hello Jays!',
                 timestamp: '2022-01-01T12:00:00Z'
             },
             {
@@ -32,12 +32,12 @@ const userData = [
         chat: [
             {
                 id: 1,
-                message: 'Hello John!',
+                message: 'Hi Jays!',
                 timestamp: '2022-01-01T12:00:00Z'
             },
             {
                 id: 2,
-                message: 'How are you?',
+                message: 'It&apos;s been sometimes',
                 timestamp: '2022-01-01T12:00:00Z'
             },
             // More messages...
@@ -53,13 +53,8 @@ const userData = [
         chat: [
             {
                 id: 1,
-                message: 'Hello John!',
+                message: 'Good morning!',
                 timestamp: '2022-01-01'
-            },
-            {
-                id: 2,
-                message: 'How far?',
-                timestamp: '2022-01-01T12:00:00Z'
             },
             // More messages...
         ]
@@ -74,12 +69,12 @@ const userData = [
         chat: [
             {
                 id: 1,
-                message: 'Hello John!',
+                message: 'Hello Jays',
                 timestamp: '2022-01-01T12:00:00Z'
             },
             {
                 id: 2,
-                message: 'This is great. Trying to make it works gherjerhj',
+                message: 'This is great. Trying to make it works.',
                 timestamp: '2022-01-01T12:00:00Z'
             },
             // More messages...

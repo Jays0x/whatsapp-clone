@@ -16,7 +16,7 @@ function page() {
             <input type='email' id='email' name='email' placeholder='e.g example@gmail.com' className='bg-[var(--component)] py-3 px-4 rounded-md placeholder:text-[var(--input)] w-[400px]' required />
           </form>
 
-          <Link href='/email-verification' className='bg-[var(--button)] py-4 rounded-md text-center mb-10'>Continue</Link>
+          <Link href='/email-verification' className='bg-[var(--button)] py-4 rounded-md text-center mb-10 text-white'>Continue</Link>
 
       </div>
 

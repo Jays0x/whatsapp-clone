@@ -46,7 +46,7 @@ function Page() {
 
               </form>
 
-              <Link href='/account-verification' className='bg-[var(--button)] py-4 rounded-md text-center mb-10'>Submit</Link>
+              <Link href='/account-verification' className='bg-[var(--button)] text-white py-4 rounded-md text-center mb-10'>Submit</Link>
 
               <p className='text-center text-[var(--paragraph)]'>
                 Already have an account?{' '}
