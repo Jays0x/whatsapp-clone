@@ -1,13 +1,13 @@
 // To clone this project
 
-Git clone --project repository
+**Git clone --project repository**
 
 
 // Install all dependency
 
-npm install
-
+**npm install
+**
 
 // Run the development
 
-npm run dev
+**npm run dev**
