@@ -1,12 +1,12 @@
-// To clone this project
+_// To clone this project_
 
 **Git clone --project repository**
 
 
-// Install all dependency
+_// Install all dependency_
 
 **npm install**
 
-// Run the development
+_// Run the development_
 
 **npm run dev**
