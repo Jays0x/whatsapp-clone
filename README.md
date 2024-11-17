@@ -5,8 +5,7 @@
 
 // Install all dependency
 
-**npm install
-**
+**npm install**
 
 // Run the development
 
