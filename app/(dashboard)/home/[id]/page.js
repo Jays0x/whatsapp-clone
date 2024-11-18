@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
 import { FiSend, FiPaperclip, FiSearch } from 'react-icons/fi';
+import UserProfile from '@/components/dashboard/popup/UserProfile';
+import UserMenuDrop from '@/components/dashboard/popup/UserMenuDrop';
 
 function UserPage() {
   const pathname = usePathname();
@@ -14,6 +16,25 @@ function UserPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [messages, setMessages] = useState([]);
   const [isPlaceholderVisible, setIsPlaceholderVisible] = useState(true);
+  const [showProfile, setShowProfile] = useState(false);
+  const [showUserMenu, setShowUserMenu] = useState(false);
+
+  const handleProfile = () =>{
+    setShowProfile(true);
+  }
+
+  const closeProfile = () =>{
+    setShowProfile(false);
+  }
+
+  const handleUserMenu = () =>{
+    setShowUserMenu(true);
+  }
+
+  const closeUserMenu = () =>{
+    setShowUserMenu(false);
+  }
+
 
   const editorRef = useRef(null);
   const user = userData.find((user) => user.id === parseInt(id));
@@ -98,8 +119,8 @@ function UserPage() {
   return (
     <div className='flex flex-col h-[100vh] font-[family-name:var(--font-geist-mono)]'>
       <div className='border-b border-[var(--border)] h-[65px] px-10 flex justify-between items-center'>
-        <div className='flex gap-3 items-center cursor-pointer'>
-          <div className='w-[40px] h-[40px]'>
+        <div className='flex gap-3 items-center cursor-pointer' onClick={handleProfile}>
+          <div className='w-[40px] h-[40px]' >
             <Image
               src={user.avatar}
               alt={user.name}
@@ -115,9 +136,15 @@ function UserPage() {
             </p>
           </div>
         </div>
-        <div className='hover:bg-[var(--hover)] px-3 py-2 rounded-md cursor-pointer'>
+          {
+            showProfile && <UserProfile close={closeProfile} />
+          }
+        <div className='hover:bg-[var(--hover)] px-3 py-2 rounded-md cursor-pointer' onClick={handleUserMenu}>
           <HiOutlineDotsVertical className='w-[20px] h-[20px]' />
         </div>
+        {
+          showUserMenu && <UserMenuDrop close={closeUserMenu}/>
+        }
       </div>
 
       <div className='border-b border-[var(--border)] px-5 py-3'>
@@ -133,7 +160,7 @@ function UserPage() {
         </div>
       </div>
 
-      <div className='flex-1 overflow-y-auto px-[150px] py-8 space-y-4'>
+      <div className='flex-1 overflow-y-auto lg:px-[150px] py-8 space-y-4 px-8'>
         {filteredMessages.map((chat) => (
           <div key={chat.id} className={`flex ${chat.sender === 'me' ? 'justify-end' : 'justify-start'}`}>
             <div

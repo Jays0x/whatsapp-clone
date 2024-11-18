@@ -17,7 +17,9 @@ function Sidebar({ first, second }) {
     <div className='flex flex-col justify-between items-center font-[family-name:var(--font-geist-mono)] h-[100vh] py-8'>
       <div className='mb-4 flex flex-col gap-7 justify-center items-center'>
         <div className='mb-8'>
-          <Image src='/icon.svg' alt='Logo' width={40} height={40} className='mb-10' />
+          <Link href='/home'>
+            <Image src='/icon.svg' alt='Logo' width={40} height={40} className='mb-10' />
+          </Link>
           <hr className='border-[var(--input)]'/>
         </div>
         {first.map((item, i) => (
