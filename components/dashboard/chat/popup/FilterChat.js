@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
-import userData from '../chat/data';
+import userData from '../data';
 
 function FilterChat({ close, setFilterType }) {
   const filterRef = useRef(null);

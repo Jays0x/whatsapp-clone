@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { FiSearch } from 'react-icons/fi';
-import userData from '../chat/data';
+import userData from '../data';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
