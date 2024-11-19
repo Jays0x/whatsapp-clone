@@ -6,8 +6,10 @@ import userData from './data';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import AllUser from '../popup/AllUser';
-import FilterChat from '../popup/FilterChat';
+import AllUser from './popup/AllUser';
+// import AllUser from '../popup/AllUser';
+import FilterChat from './popup/FilterChat';
+// import FilterChat from '../popup/FilterChat';
 
 function ChatList() {
   const router = useRouter();

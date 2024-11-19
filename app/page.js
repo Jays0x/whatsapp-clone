@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 // import { useTheme } from "next-themes";
 // import { useEffect, useState } from "react";
 
@@ -12,6 +12,8 @@ export default function Home() {
       <h1 className="lg:text-2xl text-xl font-semibold">
         This is the landing page
       </h1>
+
+      <Link href='/login'>Log in</Link>
       
     </div>
   );

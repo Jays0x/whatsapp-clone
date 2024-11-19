@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import userData from '../chat/data';
+import userData from '../data';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';

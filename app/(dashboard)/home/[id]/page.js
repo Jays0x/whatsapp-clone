@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
 import { FiSend, FiPaperclip, FiSearch } from 'react-icons/fi';
-import UserProfile from '@/components/dashboard/popup/UserProfile';
-import UserMenuDrop from '@/components/dashboard/popup/UserMenuDrop';
+import UserProfile from '@/components/dashboard/chat/popup/UserProfile';
+import UserMenuDrop from '@/components/dashboard/chat/popup/UserMenuDrop';
 
 function UserPage() {
   const pathname = usePathname();
