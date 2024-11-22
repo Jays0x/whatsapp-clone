@@ -1,76 +1,89 @@
-'use client';
-import React, { useState, useEffect } from 'react';
+'use client'
+import React, { useState } from 'react';
 import { FaPlus } from 'react-icons/fa';
-import { HiOutlineMail } from 'react-icons/hi';
 import contactData from './data';
-import Link from 'next/link';
 import Image from 'next/image';
-import AllContacts from './popup/AllUserContact';
+import EmailContact from './popup/EmailContact';
+import AllUserContact from './popup/AllUserContact';
+import Link from 'next/link';
 
 function ContactList() {
-  const [allContact, setAllContact] = useState(false);
-  const [hydrated, setHydrated] = useState(false);
+  const [allUser, setAllUser] = useState(false);
+  const [openInput, setOpenInput] = useState(false);
 
-  useEffect(() => {
-    // Mark the component as hydrated
-    setHydrated(true);
-  }, []);
+  const handleAllUser = () => {
+    setAllUser(true);
+    setOpenInput(false);
+  }
 
-  const handleAllContact = () => {
-    setAllContact(true);
+  const closeAllUser = () => {
+    setAllUser(false);
+    setOpenInput(false);
   };
 
-  const CloseAllContact = () => {
-    setAllContact(false);
-  };
+  const handleOpenInput = () => {
+    setOpenInput(true);
+    setAllUser(false);
+  }
+
+  const handleCloseInput = () => {
+    setOpenInput(false);
+    setAllUser(false);
+  }
+
+  console.log(contactData)
+
+  
 
   return (
-    <div className='flex flex-col h-[100vh] font-[family-name:var(--font-geist-mono)] border-r border-[var(--border)] px-8 py-6'>
-      {/* Header */}
+    <div className='flex flex-col lg:flex-col h-[100vh] font-[family-name:var(--font-geist-mono)] p-8'>
+
       <div className='flex justify-between items-center mb-8'>
-        <h1 className='text-2xl font-semibold'>Contact</h1>
-        <div className='hover:bg-[var(--hover)] px-4 py-3 rounded-md cursor-pointer' onClick={handleAllContact}>
+        <h1 className='lg:text-2xl text-xl font-semibold'>Contact</h1>
+
+        <div className='hover:bg-[var(--hover)] px-4 py-3 rounded-md cursor-pointer' onClick={handleAllUser}>
           <FaPlus />
         </div>
-        {allContact && <AllContacts close={CloseAllContact} />}
+        {
+          allUser && !openInput && <AllUserContact close={closeAllUser} openInput={handleOpenInput} closeInput={handleCloseInput} input={openInput} openUsers={handleAllUser} />
+        }
+
       </div>
 
-      {/* Contact List */}
+      {
+        openInput && !allUser && <EmailContact close={handleCloseInput} openUsers={handleAllUser} />
+      }
+
+      {/* Contact list */}
       <div>
-        {contactData.map((contact) => {
-          // Get the last email content
-          const lastMessage = contact.content.at(-1);
+        {
+          contactData.map((contact) => {
+            const lastMessage = contact.content.at(-1); // Access the last message directly
 
-          // Render the timestamp only if the component is hydrated
-          const timestamp = hydrated
-            ? new Date(lastMessage.timestamp).toLocaleString()
-            : 'Loading...';
-
-          return (
-            <div key={contact.id} className='mb-6'>
-              <Link href={`/contact/${contact.id}`} className='flex items-start gap-4'>
-                {/* Avatar */}
-                <div className='w-[70px] h-[50px]'>
-                  <Image
-                    src={contact.avatar}
-                    alt={contact.name}
-                    width={150}
-                    height={150}
-                    className='rounded-full w-full h-full object-cover'
+            console.log(contact)
+            return (
+              <Link href={`/contact/${contact.id}`} key={contact.id} className='flex gap-4 mb-6 w-full '>
+                <div className='w-[50px] h-[50px]'>
+                  <Image 
+                    src={contact.avatar} 
+                    alt='contactImage' 
+                    width={50} 
+                    height={50} 
+                    className='rounded-full object-cover w-full h-full'
                   />
                 </div>
 
-                <div>
-                  {/* Display last email content */}
-                  <h1 className='text-sm font-semibold mb-2'>{lastMessage.subject}</h1>
-                  <p className='text-sm text-[var(--paragraph)] line-clamp-2 mb-2'>{lastMessage.message}</p>
-                  <p className='text-xs text-[var(--tag)]'>{timestamp}</p>
+                {/* Display last message */}
+                <div className='w-[60%]'>
+                  <h2 className='text-md font-medium line-clamp-1'>{lastMessage.subject}</h2>
+                  <p className='text-[var(--paragraph)] text-sm line-clamp-2'>{lastMessage.message}</p>
                 </div>
               </Link>
-            </div>
-          );
-        })}
+            )
+          })
+        }
       </div>
+
     </div>
   );
 }

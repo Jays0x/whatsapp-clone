@@ -24,6 +24,28 @@ const contactData = [
             },
         ]
     },
+    {
+        id: 2,
+        name: 'Mary Smith',
+        email: 'mary.smith@example.com',
+        phone: '+1 123-456-7890',
+        address: '123 Main St, City, State, ZIP',
+        avatar: '/mary.jpg',
+        content: [
+            {
+                id: 1,
+                subject: 'Decentralized Information',
+                message: 'Hi Jays, How are you?',
+                timestamp: '2022-01-01T07:00:00Z'
+            },
+            {
+                id: 2,
+                subject: 'Thanks so much!',
+                message: 'Really appreciate your friendship. Thanks for the kind words',
+                timestamp: '2022-01-01 08:00:00Z'
+            },
+        ]
+    },
 
 
 ]

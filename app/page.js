@@ -13,7 +13,7 @@ export default function Home() {
         This is the landing page
       </h1>
 
-      <Link href='/login'>Log in</Link>
+      <Link href='/login' className="bg-[var(--component)] px-4 py-3 mt-8 rounded-md">Log in</Link>
       
     </div>
   );
