@@ -1,5 +1,5 @@
 'use client';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import userData from '@/components/dashboard/chat/data';
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
@@ -11,6 +11,7 @@ import UserMenuDrop from '@/components/dashboard/chat/popup/UserMenuDrop';
 function UserPage() {
   const pathname = usePathname();
   const id = pathname.split('/').pop();
+  const router = useRouter();
 
   const [formattedDate, setFormattedDate] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
@@ -53,9 +54,26 @@ function UserPage() {
     }
   }, [user, latestChat]);
 
+    //Escape to home when pressed 
+
+    useEffect(() => {
+      const handleGlobalKeyDown = (e) => {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          router.push('/home');
+        }
+      };
+    
+      window.addEventListener('keydown', handleGlobalKeyDown);
+      return () => window.removeEventListener('keydown', handleGlobalKeyDown);
+    }, [router]);
+  
+
   if (!user) {
     return <div>User not found</div>;
   }
+
+  
 
   // Handle sending a message
   const handleSendMessage = () => {
@@ -82,12 +100,14 @@ function UserPage() {
     }
   };
 
+
   // Handle keyboard shortcuts
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();
     }
+
 
     if (e.key === 'b' && e.ctrlKey) {
       e.preventDefault();

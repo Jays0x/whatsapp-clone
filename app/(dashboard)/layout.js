@@ -15,8 +15,6 @@ export default function AuthLayout({ children }) {
                 </div>
             </div>
 
-           
-
             <div className="w-full h-[100vh] bg-[var(--component)]">{children}</div>
         </div>
     );

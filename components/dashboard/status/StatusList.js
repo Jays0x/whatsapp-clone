@@ -36,14 +36,14 @@ function StatusList() {
        
       </div>
 
-      <div className='w-full flex gap-5'>
-      <div className='w-[50px] h-[50px] rounded-full'>
-         <Image src='/status4.jpeg' alt='status' width={50} height={50} className='w-full h-full rounded-full'/>
-      </div>
+      <div className='w-full flex gap-5 mb-8'>
+        <div className='w-[50px] h-[50px] rounded-full'>
+            <Image src='/status4.jpeg' alt='status' width={50} height={50} className='w-full h-full rounded-full'/>
+        </div>
 
-      <div>
-        <h1>You</h1>
-        <p className='text-sm text-[var(--paragraph)]'>{today}</p>
+        <div>
+            <h1>You</h1>
+            <p className='text-sm text-[var(--paragraph)]'>{today}</p>
         </div>
       </div>
 
@@ -59,7 +59,7 @@ function StatusList() {
                 const lastImage = lastStatus.status_image.at(-1);
                 
                 return (
-                    <Link href='#' key={status.id} className='flex gap-5 mb-8' onClick={handleStatusOpen}>
+                    <Link href={`/status/${status.id}`} key={status.id} className='flex gap-5 mb-8'>
                        
                         <div className='w-[50px] h-[50px] rounded-full'>
                             <Image src={lastImage} alt='status' width={50} height={50} className='w-full h-full rounded-full'/>
@@ -75,9 +75,9 @@ function StatusList() {
                 )
             })
         }
-        {
+        {/* {
             openStatus && <AllStatus close={closeStatus} />
-        }
+        } */}
        </div>
 
     </div>
