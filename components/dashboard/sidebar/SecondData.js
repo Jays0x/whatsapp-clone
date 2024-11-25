@@ -11,12 +11,12 @@ const secondData = [
   },
   {
       title: 'Settings',
-      link: '/settings',
+      link: '#settings',
       icon: <IoSettingsOutline />
   },
   {
       title: 'Profile',
-      link: '/profile',
+      link: '#profile',
       icon: <RiUserLine />
   }
 ];
