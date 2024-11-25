@@ -28,9 +28,9 @@ function UserMenuDrop({ close }) {
       ref={filterRef} // Attach the ref here
       className='absolute right-0 mr-[40px] mt-[220px] bg-[var(--background)] p-8 rounded-md shadow-lg flex flex-col justify-between'
     >
-      <Link href='/home' className='cursor-pointer mb-2'>Close chat</Link>
+      <Link href='/starred' className='cursor-pointer mb-2'>Close chat</Link>
       <button className='cursor-pointer mb-2 text-left'>Select</button>
-      <button className='cursor-pointer mb-2 text-left'>Archive</button>
+      <button className='cursor-pointer mb-2 text-left'>Archived</button>
       <button className='cursor-pointer text-left'>Block account</button>
     </div>
   );
